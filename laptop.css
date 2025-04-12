@@ -1,0 +1,97 @@
+:root {
+    --laptop-width: 50vw;
+    --bottom-width: 60vw;
+    --laptop-height: 30vw;
+    --laptop-keyboard-height: 1.5vw;
+    --laptop-border-width: 1.3vw;
+    --laptop-circle: 0.8vw;
+    --laptop-circle-margin: -1.1vw;
+}
+
+.laptop {
+    margin: 30px 0;
+    width: var(--laptop-width);
+    height: var(--laptop-height);
+    background: #e8ebf0;
+    border: var(--laptop-border-width) solid #e8ebf0;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
+    transition: all 0.1s linear, line-height 0s linear;
+}
+
+.laptop:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: var(--laptop-circle-margin);
+    /* margin: var(--laptop-circle-margin); */
+    width: var(--laptop-circle);
+    height: var(--laptop-circle);
+    border-radius: 6px;
+    background: #a5adbd;
+}
+/* .laptop:before {
+    top: -6px;
+} */
+
+.laptop>div {
+    position: relative;
+}
+
+.laptop>.content {
+    height: 100%;
+    left: 0;
+    margin-left: 0;
+    overflow: hidden;
+}
+
+
+.laptop .screenshot {
+    width: 100%;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+}
+
+
+.btm:before {
+    content: "";
+    position: relative;
+    width: 42px;
+    height: 3px;
+    /* left: 50%; */
+    top: 0;
+    margin-left: -21px;
+    border-radius: 0 0 5px 5px;
+    background: #d8dbe1;
+}
+
+.btm {
+    width: var(--bottom-width);
+    height: var(--laptop-keyboard-height);
+    /* bottom: -12px; */
+    /* left: 15vw; */
+    margin-left: -5vw;
+    border-radius: 0 0 20px 20px;
+    background: #f4f5f7;
+    z-index: 1;
+    box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
+}
+
+.shadow {
+    position: relative;
+    height: 15px;
+    left: 50%;
+    margin-left: -175px;
+    z-index: -1;
+    bottom: -20px;
+    background: radial-gradient(ellipse at center, rgba(52, 172, 108, 1) 0%, rgba(52, 172, 108, 1) 53%, rgba(46, 204, 113, 1) 55%, rgba(46, 204, 113, 0) 55%, rgba(46, 204, 113, 0) 100%);
+}
+
+.laptop .shadow {
+    width: 450px;
+    margin-left: -225px;
+    bottom: -16px;
+}
