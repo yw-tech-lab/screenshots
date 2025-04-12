@@ -49,7 +49,7 @@
 
 .laptop .screenshot {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     user-select: none;
     -webkit-user-drag: none;
     touch-action: none;
@@ -94,4 +94,28 @@
     width: 450px;
     margin-left: -225px;
     bottom: -16px;
+}
+
+@media screen and (max-width: 800px) {
+    :root {
+        --laptop-width: 70vw;
+        --bottom-width: 82vw;
+        --laptop-height: 40vw;
+        --laptop-keyboard-height: 1.5vw;
+        --laptop-border-width: 1.3vw;
+        --laptop-circle: 0.8vw;
+        --laptop-circle-margin: -1.1vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --laptop-width: 85vw;
+        --bottom-width: 95vw;
+        --laptop-height: 50vw;
+        --laptop-keyboard-height: 1.5vw;
+        --laptop-border-width: 1.3vw;
+        --laptop-circle: 0.8vw;
+        --laptop-circle-margin: -1.1vw;
+    }
 }
