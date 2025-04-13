@@ -121,4 +121,27 @@ document.addEventListener('DOMContentLoaded', () => {
             screenshot.addEventListener('load', updateScrollHandlePosition);
         }
     });
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    
+    let currentIndex = 0;
+    
+    const moveToSlide = (index) => {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        
+        track.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+    };
+    
+    nextButton.addEventListener('click', () => {
+        moveToSlide(currentIndex + 1);
+    });
+    
+    prevButton.addEventListener('click', () => {
+        moveToSlide(currentIndex - 1);
+    });
 });

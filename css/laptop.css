@@ -61,18 +61,57 @@
     box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
 }
 
-.shadow {
+
+.desktop {
     position: relative;
-    height: 15px;
-    left: 50%;
-    margin-left: -175px;
-    z-index: -1;
-    bottom: -20px;
-    background: radial-gradient(ellipse at center, rgba(52, 172, 108, 1) 0%, rgba(52, 172, 108, 1) 53%, rgba(46, 204, 113, 1) 55%, rgba(46, 204, 113, 0) 55%, rgba(46, 204, 113, 0) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
 }
 
-.laptop .shadow {
-    width: 450px;
-    margin-left: -225px;
-    bottom: -16px;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
 }
