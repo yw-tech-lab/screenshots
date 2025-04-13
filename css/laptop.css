@@ -1,8 +1,9 @@
 :root {
     --laptop-width: 50vw;
-    --bottom-width: 60vw;
-    --laptop-height: 30vw;
-    --laptop-keyboard-height: 1.5vw;
+    --laptop-height: calc(var(--laptop-width) * 0.5625);
+    --bottom-width: calc(var(--laptop-width) * 6 / 5);
+    --bottom-left-margin: calc((var(--bottom-width)/2 - var(--laptop-width) / 2) * -1);
+    --laptop-keyboard-height: 1.7vw;
     --laptop-border-width: 1.3vw;
     --laptop-circle: 0.8vw;
     --laptop-circle-margin: -1.1vw;
@@ -17,7 +18,7 @@
     border-radius: 10px 10px 0 0;
     position: relative;
     box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
-    transition: all 0.1s linear, line-height 0s linear;
+    /* transition: all 0.1s linear, line-height 0s linear; */
 }
 
 .laptop:before {
@@ -25,15 +26,11 @@
     position: absolute;
     left: 50%;
     top: var(--laptop-circle-margin);
-    /* margin: var(--laptop-circle-margin); */
     width: var(--laptop-circle);
     height: var(--laptop-circle);
     border-radius: 6px;
     background: #a5adbd;
 }
-/* .laptop:before {
-    top: -6px;
-} */
 
 .laptop>div {
     position: relative;
@@ -41,8 +38,6 @@
 
 .laptop>.content {
     height: 100%;
-    left: 0;
-    margin-left: 0;
     overflow: hidden;
 }
 
@@ -56,24 +51,10 @@
 }
 
 
-.btm:before {
-    content: "";
-    position: relative;
-    width: 42px;
-    height: 3px;
-    /* left: 50%; */
-    top: 0;
-    margin-left: -21px;
-    border-radius: 0 0 5px 5px;
-    background: #d8dbe1;
-}
-
 .btm {
     width: var(--bottom-width);
     height: var(--laptop-keyboard-height);
-    /* bottom: -12px; */
-    /* left: 15vw; */
-    margin-left: -5vw;
+    margin-left: var(--bottom-left-margin);
     border-radius: 0 0 20px 20px;
     background: #f4f5f7;
     z-index: 1;
@@ -94,28 +75,4 @@
     width: 450px;
     margin-left: -225px;
     bottom: -16px;
-}
-
-@media screen and (max-width: 800px) {
-    :root {
-        --laptop-width: 70vw;
-        --bottom-width: 82vw;
-        --laptop-height: 40vw;
-        --laptop-keyboard-height: 1.5vw;
-        --laptop-border-width: 1.3vw;
-        --laptop-circle: 0.8vw;
-        --laptop-circle-margin: -1.1vw;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    :root {
-        --laptop-width: 85vw;
-        --bottom-width: 95vw;
-        --laptop-height: 50vw;
-        --laptop-keyboard-height: 1.5vw;
-        --laptop-border-width: 1.3vw;
-        --laptop-circle: 0.8vw;
-        --laptop-circle-margin: -1.1vw;
-    }
 }
