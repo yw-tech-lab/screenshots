@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/mobile.css">
     <link rel="stylesheet" href="./css/laptop.css">
-    <script src="./script.js" defer></script>
+    <script src="./js/scroller.js" defer></script>
+    <script src="./js/carousel.js" defer></script>
 </head>
 
 <body>
     <div class="desktop">
-        <button class="carousel-btn prev-btn">&lt;</button>
         <div class="carousel-container">
+            <button class="carousel-btn prev-btn">&lt;</button>
             <div class="carousel-track">
 
                 <div class="carousel-slide">
@@ -76,43 +77,65 @@
                     </div>
                 </div>
             </div>
+            <button class="carousel-btn next-btn">&gt;</button>
         </div>
-        <button class="carousel-btn next-btn">&gt;</button>
     </div>
     <div class="mobile">
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn">&lt;</button>
 
-        <figure class='iphone'>
-            <img class="screenshot" src="./screenshots/mobile/ccap.png" />
-            <div class="scroll-indicator">
-                <div class="scroll-handle"></div>
-            </div>
-        </figure>
+            <div class="carousel-track">
 
-        <figure class='iphone'>
-            <img class="screenshot" src="./screenshots/mobile/impact.png" />
-            <div class="scroll-indicator">
-                <div class="scroll-handle"></div>
-            </div>
-        </figure>
+                <div class="carousel-slide">
 
-        <figure class='iphone'>
-            <img class="screenshot" src="./screenshots/mobile/homepage.png" />
-            <div class="scroll-indicator">
-                <div class="scroll-handle"></div>
+                    <figure class='iphone'>
+                        <img class="screenshot" src="./screenshots/mobile/homepage.png" />
+                        <div class="scroll-indicator">
+                            <div class="scroll-handle"></div>
+                        </div>
+                    </figure>
+
+                    <figure class='iphone'>
+                        <img class="screenshot" src="./screenshots/mobile/impact.png" />
+                        <div class="scroll-indicator">
+                            <div class="scroll-handle"></div>
+                        </div>
+                    </figure>
+
+                    <figure class='iphone'>
+                        <img class="screenshot" src="./screenshots/mobile/programs-overview.png" />
+                        <div class="scroll-indicator">
+                            <div class="scroll-handle"></div>
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="carousel-slide">
+
+                    <figure class='iphone'>
+                        <img class="screenshot" src="./screenshots/mobile/head-start.png" />
+                        <div class="scroll-indicator">
+                            <div class="scroll-handle"></div>
+                        </div>
+                    </figure>
+                    <figure class='iphone'>
+                        <img class="screenshot" src="./screenshots/mobile/p4a.png" />
+                        <div class="scroll-indicator">
+                            <div class="scroll-handle"></div>
+                        </div>
+                    </figure>
+
+                    <figure class='iphone'>
+                        <img class="screenshot" src="./screenshots/mobile/ccap.png" />
+                        <div class="scroll-indicator">
+                            <div class="scroll-handle"></div>
+                        </div>
+                    </figure>
+                </div>
             </div>
-        </figure>
-        <figure class='iphone'>
-            <img class="screenshot" src="./screenshots/mobile/head-start.png" />
-            <div class="scroll-indicator">
-                <div class="scroll-handle"></div>
-            </div>
-        </figure>
-        <figure class='iphone'>
-            <img class="screenshot" src="./screenshots/mobile/p4a.png" />
-            <div class="scroll-indicator">
-                <div class="scroll-handle"></div>
-            </div>
-        </figure>
+
+            <button class="carousel-btn next-btn">&gt;</button>
+        </div>
     </div>
 </body>
 
