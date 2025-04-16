@@ -9,11 +9,25 @@ carousels.forEach((carousel) => {
 
     const moveToSlide = (index) => {
         console.log("moveToSlide");
-        if (index < 0) index = slides.length - 1;
-        if (index >= slides.length) index = 0;
+        
+        // Calculate the actual width of a slide including its full width + gap
+        const slideWidth = slides[0].offsetWidth;
+        const slideGap = parseInt(window.getComputedStyle(track).gap) || 0;
+        
+        // Calculate how many slides are visible at once
+        const containerWidth = carousel.clientWidth - 120; // Subtract padding (60px on each side)
+        const slidesPerView = Math.round(containerWidth / (slideWidth + slideGap));
+        
+        // Adjust the maximum index based on visible slides
+        const maxIndex = Math.max(0, slides.length - slidesPerView);
 
-        track.style.transform = `translateX(-${index * 100}%)`;
+        // Handle wrapping after calculating maxIndex
+        if (index < 0) index = maxIndex;
+        if (index > maxIndex) index = 0;
+        
         currentIndex = index;
+        const totalSlideWidth = slideWidth + slideGap;
+        track.style.transform = `translateX(-${currentIndex * totalSlideWidth}px)`;
     };
 
     nextButton.addEventListener("click", () => {

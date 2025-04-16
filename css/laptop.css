@@ -1,5 +1,5 @@
 :root {
-    --laptop-width: 50vw;
+    --laptop-width: 100%;
     --laptop-height: calc(var(--laptop-width) * 0.5625);
     --bottom-width: calc(var(--laptop-width) * 6 / 5);
     --bottom-left-margin: calc((var(--bottom-width)/2 - var(--laptop-width) / 2) * -1);
@@ -12,13 +12,12 @@
 .laptop {
     margin: 30px 0;
     width: var(--laptop-width);
-    height: var(--laptop-height);
+    aspect-ratio: 15 / 8;
     background: #e8ebf0;
     border: var(--laptop-border-width) solid #e8ebf0;
     border-radius: 10px 10px 0 0;
     position: relative;
     box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
-    /* transition: all 0.1s linear, line-height 0s linear; */
 }
 
 .laptop:before {
@@ -61,7 +60,6 @@
     box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
 }
 
-
 .desktop {
     position: relative;
     display: flex;
@@ -71,47 +69,7 @@
     overflow: hidden;
 }
 
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.carousel-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    padding: 0;
-    width: 50px;
-    height: 50px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.prev-btn {
-    left: 20px;
-}
-
-.next-btn {
-    right: 20px;
+.desktop .carousel-slide {
+    flex: 0 0 calc(100% - 20vw);
+    padding: 0 10vw;
 }

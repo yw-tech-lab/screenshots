@@ -1,19 +1,21 @@
+:root {
+    --mobile-width: 100%;
+    --mobile-height: calc(var(--mobile-width) * 2);
+    --bottom-width: calc(var(--mobile-width) * 6 / 5);
+    --bottom-left-margin: calc((var(--bottom-width)/2 - var(--mobile-width) / 2) * -1);
+    --mobile-border-width: 1.3vw;
+    --mobile-circle: 0.8vw;
+    --mobile-circle-margin: -1.1vw;
+}
+
 .iphone,
 .ipad {
-    display: block;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 0 0.5em #000;
     /* background-color: #000; */
     background-color: #e8ebf0;
-    background-size: auto 200%, cover;
-    background-repeat: no-repeat, no-repeat;
     /* border: solid #111; */
     border: solid #e8ebf0;
-
-    margin-bottom: 2em;
     position: relative;
-    box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset;
+    /* box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #DDD inset; */
     transition: all 0.1s linear, line-height 0s linear;
     overflow: hidden;
 }
@@ -28,17 +30,14 @@
 }
 
 .iphone {
-    width: 250px;
-    height: 500px;
-    line-height: 51.4455445545vmin;
+    width: var(--mobile-width);
+    aspect-ratio: 1 / 1.8;
     border-width: 10px;
     border-radius: 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), #111), url(https://www.apple.com/v/iphone-xs/d/images/overview/screen_display_wallpaper_iphonexs_large.jpg);
     z-index: 200;
 }
 
 .ipad {
-    margin-left: 2em;
     height: 85.8vmin;
     width: 60vmin;
     line-height: 85.8vmin;
@@ -59,4 +58,21 @@
 .iphone:hover .scroll-indicator,
 .ipad:hover .scroll-indicator {
     opacity: 1;
+}
+
+.mobile .carousel-slide .phone-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.mobile .carousel-slide .phone {
+    width: 100%;
+    height: auto;
+    /* Maintain aspect ratio while filling width */
+    max-height: 100%;
+    object-fit: contain;
 }
